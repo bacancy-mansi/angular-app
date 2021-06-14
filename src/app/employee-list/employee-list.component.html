@@ -1,0 +1,202 @@
+<div class="employeeList">
+  <nav class="navbar navbar-light">
+    <div class="container-fluid">
+      <h1>Employees</h1>
+      <div class="searchbar" [formGroup]="searchForm">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          formControlName="query"
+        />
+      </div>
+    </div>
+  </nav>
+  <div class="rowActions">
+    <button
+      type="button"
+      (click)="resetForm()"
+      class="btn btn-secondary mt-3 ml-3"
+      data-bs-toggle="modal"
+      data-bs-target="#employeeDetailModal"
+    >
+      Add Employee
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="loder" *ngIf="loading">
+        <div class="spinner-border text-info" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div class="dataTable-wrapper" *ngIf="!loading">
+        <table class="table table-responsive" *ngIf="employeeList.length">
+          <thead>
+            <tr>
+              <th scope="col">Employee Name</th>
+              <th scope="col">Employee ID</th>
+              <th scope="col">Email ID</th>
+              <th scope="col">Mobile No.</th>
+              <th scope="col">Total Sales</th>
+              <th scope="col">Salary</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let emp of employeeList">
+              <td>{{ emp.name }}</td>
+              <td>{{ emp.id }}</td>
+              <td>{{ emp.email }}</td>
+              <td>{{ emp.mobile }}</td>
+              <td>{{ emp.totalSales }}</td>
+              <td>{{ emp.salary }}</td>
+              <td>
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    [checked]="emp.status"
+                    (change)="onStatusChange(emp)"
+                  />
+                </div>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn edit-btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#employeeDetailModal"
+                  (click)="onEdit(emp)"
+                >
+                  <i class="material-icons" (click)="onEdit(emp)">edit</i>
+                </button>
+                <button
+                  class="btn btn-secondary mx-3"
+                  (click)="deleteEmployee(emp)"
+                >
+                  <i class="material-icons">delete</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="dataTables-info">
+          Showing {{ employeeList.length }} of
+          {{ allEmployeeList.length }} records
+        </div>
+        <div class="dataTables-paginate-numbers">
+          <div *ngIf="allEmployeeList.length">
+            <app-pagination
+              [items]="allEmployeeList"
+              [pageIndex]="pageIndex"
+              [pageSize]="pageSize"
+              [totalPages]="pageCount"
+              (changePage)="onChangePage($event)"
+            ></app-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Employee Detail Modal -->
+    <div
+      class="modal fade"
+      id="employeeDetailModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Employee Details</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="employeeForm">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="name"
+                  placeholder="Full Name"
+                />
+                <label for="name" class="form-label">Employee Name</label>
+              </div>
+              <div class="mb-3 form-check form-switch">
+                <label for="status" class="form-label">Status</label>
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  formControlName="status"
+                  [checked]="employeeForm.value.status"
+                />
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  formControlName="email"
+                  aria-describedby="emailHelp"
+                  placeholder="name@example.com"
+                />
+                <label for="email" class="form-label">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="mobile"
+                  placeholder="Mobile"
+                />
+                <label for="mobile" class="form-label">Mobile</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="totalSales"
+                  placeholder="0"
+                />
+                <label for="totalSales" class="form-label">Total Sales</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="salary"
+                  placeholder="0"
+                />
+                <label for="salary" class="form-label">Salary</label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="cancel"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn save-btn"
+              (click)="addOrUpdateEmployeeDetails()"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

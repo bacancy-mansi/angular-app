@@ -1,0 +1,55 @@
+.employeeList .rowActions,
+.dataTable-wrapper {
+  margin: 10px;
+}
+
+tbody,
+h1 {
+  color: #6c757d;
+}
+
+th {
+  color: #72777a;
+}
+
+nav {
+    background-color: #e3f2fd;
+}
+
+.dataTable-wrapper .dataTables-info {
+  float: left;
+  color: #6c757d;
+}
+
+.dataTable-wrapper .dataTables-paginate-numbers {
+  float: right;
+}
+
+.form-check {
+  padding-top: 5px;
+}
+.form-check-input:checked {
+  background-color: #6c757d !important;
+  border-color: #d6dbd7 !important;
+}
+
+tbody {
+  vertical-align: middle;
+}
+
+.loder {
+  margin: auto;
+  width: 10%;
+  padding: 10px;
+}
+
+.edit-btn {
+  background-color: #e3f2fd;
+  color: #6c757d;
+}
+
+.save-btn {
+  background-color: #e3f2fd;
+  color: #6c757d;
+  border-color: #e3f2fd;
+}
