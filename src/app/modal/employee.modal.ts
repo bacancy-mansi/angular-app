@@ -4,6 +4,6 @@ export class Employee {
   email = '';
   mobile = '';
   totalSales = '';
-  salary = '';
+  salary = 0;
   status = false;
 }

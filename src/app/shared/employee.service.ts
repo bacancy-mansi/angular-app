@@ -14,13 +14,11 @@ export class EmployeeService {
   public fetchAllEmployees$(
     pageIndex: number,
     pageSize: number,
-    match?: string,
-
+    match?: string
   ): Observable<Employee> {
     let params = {};
     if (match !== '') {
-    params = { name: match,
-      };
+      params = { name: match };
     }
 
     return this.http.get(this.baseUrl, { params }).pipe(
@@ -35,7 +33,7 @@ export class EmployeeService {
     );
   }
 
-  public addEmployee(data: Employee) {
+  public addEmployee(data: Employee): Observable<any> {
     return this.http.post('http://localhost:3000/posts', data).pipe(
       map((response: any) => {
         return response;
@@ -48,7 +46,7 @@ export class EmployeeService {
     );
   }
 
-  public deleteEmployee(id: number) {
+  public deleteEmployee(id: number): Observable<Employee> {
     return this.http.delete('http://localhost:3000/posts/' + id).pipe(
       map((response: any) => {
         return response;
@@ -56,7 +54,7 @@ export class EmployeeService {
     );
   }
 
-  public updateEmployee(data: Employee) {
+  public updateEmployee(data: Employee): Observable<Employee> {
     return this.http.put('http://localhost:3000/posts/' + data.id, data).pipe(
       map((response: any) => {
         return response;

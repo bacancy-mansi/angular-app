@@ -53,7 +53,7 @@
               <td>{{ emp.email }}</td>
               <td>{{ emp.mobile }}</td>
               <td>{{ emp.totalSales }}</td>
-              <td>{{ emp.salary }}</td>
+              <td>{{ emp.salary | currency}}</td>
               <td>
                 <div class="form-check form-switch">
                   <input
@@ -129,6 +129,7 @@
                   placeholder="Full Name"
                 />
                 <label for="name" class="form-label">Employee Name</label>
+
               </div>
               <div class="mb-3 form-check form-switch">
                 <label for="status" class="form-label">Status</label>
@@ -155,6 +156,7 @@
                   class="form-control"
                   formControlName="mobile"
                   placeholder="Mobile"
+                  maxlength="10"
                 />
                 <label for="mobile" class="form-label">Mobile</label>
               </div>
@@ -191,6 +193,7 @@
               type="button"
               class="btn save-btn"
               (click)="addOrUpdateEmployeeDetails()"
+              [disabled]="!employeeForm.valid"
             >
               Save
             </button>

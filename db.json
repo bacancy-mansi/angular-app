@@ -4,7 +4,7 @@
       "id": 2,
       "name": "Joy Stark",
       "email": "joy@gmail.com",
-      "mobile": "919125253636",
+      "mobile": "9125253636",
       "totalSales": "25",
       "salary": "25000",
       "status": false
@@ -13,7 +13,7 @@
       "id": 3,
       "name": "Leo test",
       "email": "lea@gmail.com",
-      "mobile": "919125253636",
+      "mobile": "12345678910",
       "totalSales": "29",
       "salary": "25000",
       "status": true
@@ -22,7 +22,7 @@
       "id": 4,
       "name": "Alex Luis1",
       "email": "alex@gmail.com",
-      "mobile": "919125253636",
+      "mobile": "9125253636",
       "totalSales": "25",
       "salary": "25000",
       "status": false
@@ -31,25 +31,25 @@
       "id": 5,
       "name": "Julie Candy",
       "email": "julie@gmail.com",
-      "mobile": "919125253636",
+      "mobile": "9125253636",
       "totalSales": "44",
       "salary": "45000",
       "status": true
     },
     {
       "id": 6,
-      "name": "Leo 1",
+      "name": "Leo",
       "email": "joy@gmail.com",
-      "mobile": "919125253636",
+      "mobile": "9125253636",
       "totalSales": "25",
-      "salary": "25000",
-      "status": null
+      "salary": "2500",
+      "status": false
     },
     {
       "id": 7,
-      "name": "12345",
+      "name": "Lucy Melon",
       "email": "joy@gmail.com",
-      "mobile": "919125253636",
+      "mobile": "9125253636",
       "totalSales": "55",
       "salary": "25000",
       "status": true
@@ -60,16 +60,7 @@
       "email": "n@gmail.com",
       "mobile": "1234567890",
       "totalSales": "55",
-      "salary": "59000",
-      "status": null
-    },
-    {
-      "id": 10,
-      "name": "lllll",
-      "email": "ll@gmail.com",
-      "mobile": "4545454666",
-      "totalSales": "25",
-      "salary": "25000",
+      "salary": "5900",
       "status": true
     },
     {
@@ -79,13 +70,13 @@
       "mobile": "4545454545",
       "totalSales": "30",
       "salary": "30000",
-      "status": null
+      "status": false
     },
     {
       "id": 12,
       "name": "Jackey",
       "email": "jack@gmail.com",
-      "mobile": "919125253636",
+      "mobile": "9125253636",
       "totalSales": "66",
       "salary": "66000",
       "status": true
@@ -94,24 +85,24 @@
       "id": 13,
       "name": "Ket",
       "email": "ket@gmail.com",
-      "mobile": "919125253636",
+      "mobile": "9125253636",
       "totalSales": "55",
       "salary": "59000",
-      "status": null
+      "status": false
     },
     {
       "id": 14,
-      "name": "abcd",
-      "email": "a@gmail.com",
-      "mobile": "456456456",
+      "name": "Love canday",
+      "email": "love@gmail.com",
+      "mobile": "4564564561",
       "totalSales": "88",
       "salary": "50000",
       "status": false
     },
     {
       "id": 15,
-      "name": "hhjhjhj",
-      "email": "jjjj@gmail.com",
+      "name": "Helan",
+      "email": "helan@gmail.com",
       "mobile": "9123456789",
       "totalSales": "55",
       "salary": "55000",
@@ -119,8 +110,8 @@
     },
     {
       "id": 16,
-      "name": "kkkkk",
-      "email": "kk@gmail.com",
+      "name": "Bob",
+      "email": "bob@gmail.com",
       "mobile": "4564567891",
       "totalSales": "45",
       "salary": "45000",
@@ -128,12 +119,21 @@
     },
     {
       "id": 17,
-      "name": "kjkjk",
-      "email": "abcd@gmail.com",
-      "mobile": "47478585745",
+      "name": "Jony",
+      "email": "jony@gmail.com",
+      "mobile": "4747858574",
       "totalSales": "41",
       "salary": "41000",
       "status": true
+    },
+    {
+      "id": 18,
+      "name": "nehi",
+      "email": "nehi@gmail.com",
+      "mobile": "1234567890",
+      "totalSales": "58",
+      "salary": "5800",
+      "status": false
     }
   ],
   "comments": [],

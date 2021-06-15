@@ -6,7 +6,7 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, of, Subscription, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { PaginationConstants } from '../enums/pagination-constants.enum';
@@ -33,11 +33,11 @@ export class EmployeeListComponent implements OnInit, OnDestroy {
 
   public employeeForm: FormGroup = this.fb.group({
     id: [''],
-    name: [''],
-    email: [''],
-    mobile: [''],
-    totalSales: [''],
-    salary: [''],
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    mobile: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+    totalSales: ['', Validators.required],
+    salary: ['0', Validators.required],
     status: [false],
   });
   public employeeDetailsData: Employee = new Employee();
